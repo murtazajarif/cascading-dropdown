@@ -1,0 +1,47 @@
+/* app.component.css */
+
+/* Page Background */
+body, html {
+    background: linear-gradient(to right, #673ab7, #3f51b5); /* Gradient from purple to blue */
+    color: #fff;
+    height: 100vh; /* Full viewport height */
+    margin: 0; /* Reset default margin */
+    display: flex;
+    flex-direction: column; /* Stack vertically */
+  }
+
+  .heading{
+    align-self: center;
+    margin-top: 30px;
+  }
+  
+  /* Container for the form to align in the top center */
+  .container {
+    width: 100%; /* Full width to contain the form */
+    max-width: 960px; /* Maximum width of the container */
+    margin-top: 80px; /* Spacing from the top */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+  }
+  
+  /* Form styling */
+  form {
+    display: flex;
+    gap: 20px; /* Space between form fields */
+    justify-content: center;
+  }
+  
+  /* Adjustments for the material form field */
+  ::ng-deep .mat-form-field {
+    margin-bottom: 20px; /* Spacing below the form field */
+  }
+  
+  /* Label adjustments for better visibility on gradient background */
+  ::ng-deep .mat-form-field-appearance-fill .mat-form-field-label {
+    color: #673ab7; /* Purple text for labels */
+  }
+  
+  ::ng-deep .mat-focused .mat-form-field-label {
+    color: #3f51b5; /* Blue text for labels when focused */
+  }
+  

@@ -1,8 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSelectModule } from '@angular/material/select';
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
+import {MatInputModule}  from '@angular/material/input';
+import {ReactiveFormsModule}  from "@angular/forms";
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 @NgModule({
   declarations: [
@@ -10,7 +14,13 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    BrowserAnimationsModule,
+    MatSelectModule,
+    FormsModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatAutocompleteModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
