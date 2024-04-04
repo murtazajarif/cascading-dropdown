@@ -3,7 +3,12 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.2.
 
 ## Screenshots
-![Fundtracker](https://github.com/murtazajarif/cascading-dropdown/assets/97272907/ff1969f3-1e50-49d7-8f30-0c084cdfb654)
+
+![image](https://github.com/murtazajarif/cascading-dropdown/assets/97272907/af92f59f-abac-44f8-a2f6-ebb4af87ba9c)
+
+
+
+https://github.com/murtazajarif/cascading-dropdown/assets/97272907/07abf78d-ae12-408b-b16d-80329729374e
 
 
 
