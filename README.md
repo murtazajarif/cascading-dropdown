@@ -2,6 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.2.
 
+## Screenshots
+![image](https://githu![Fundtracker](https://github.com/murtazajarif/cascading-dropdown/assets/97272907/667554e9-eb30-4d96-8379-38a2b6659b85)
+b.com/murtazajarif/cascading-dropdown/assets/97272907/b2ab2014-3dc0-4430-88e9-4c62f18db791)
+
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
