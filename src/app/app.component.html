@@ -1,46 +1,42 @@
 <body>
-  <h1 class="heading">Fund Tracker</h1>
+  <h1 class="heading">Fund Tracker</h1> <!-- Ensure you have a heading -->
   <div class="container">
     <form [formGroup]="formGroup">
       <!-- Fund Family with Autocomplete -->
       <mat-form-field appearance="fill">
         <mat-label>Fund Family</mat-label>
-        <input matInput placeholder="Search Fund Family..." formControlName="fundFamily" [matAutocomplete]="autoFamily">
+        <input type="text" matInput placeholder="Search Fund Family..." formControlName="fundFamily" [matAutocomplete]="autoFamily">
         <mat-autocomplete #autoFamily="matAutocomplete">
-          <mat-option *ngFor="let family of filteredFundFamilies" [value]="family">
-            {{ family }}
-          </mat-option>
+          <mat-option *ngFor="let family of filteredFundFamilies" [value]="family">{{ family }}</mat-option>
         </mat-autocomplete>
       </mat-form-field>
-  
+
       <!-- Fund Sector with Autocomplete -->
       <mat-form-field appearance="fill">
         <mat-label>Fund Sector</mat-label>
-        <input matInput placeholder="Search Fund Sector..." formControlName="fundSector" [matAutocomplete]="autoSector">
+        <input type="text" matInput placeholder="Search Fund Sector..." formControlName="fundSector" [matAutocomplete]="autoSector">
         <mat-autocomplete #autoSector="matAutocomplete">
-          <mat-option *ngFor="let sector of filteredFundSectors" [value]="sector">
-            {{ sector }}
-          </mat-option>
+          <mat-option *ngFor="let sector of filteredFundSectors" [value]="sector">{{ sector }}</mat-option>
         </mat-autocomplete>
       </mat-form-field>
-  
+
       <!-- Fund Name with Autocomplete -->
       <mat-form-field appearance="fill">
         <mat-label>Fund Name</mat-label>
-        <input matInput placeholder="Search Fund Name..." formControlName="fundName" [matAutocomplete]="autoName">
-        <mat-autocomplete #autoName="matAutocomplete" (optionSelected)="onFundNameSelected()">
-          <mat-option *ngFor="let name of filteredFundNames" [value]="name">
-            {{ name }}
-          </mat-option>
+        <input type="text" matInput placeholder="Search Fund Name..." formControlName="fundName" [matAutocomplete]="autoName">
+        <mat-autocomplete #autoName="matAutocomplete">
+          <mat-option *ngFor="let name of filteredFundNames" [value]="name">{{ name }}</mat-option>
         </mat-autocomplete>
       </mat-form-field>
-  
-      <!-- Ticker - This will auto-fill when Fund Name is selected -->
+
+      <!-- Ticker -->
       <mat-form-field appearance="fill">
         <mat-label>Ticker</mat-label>
-        <input matInput placeholder="Ticker" formControlName="fundTicker">
+        <input type="text" matInput placeholder="Search Ticker..." formControlName="ticker" [matAutocomplete]="autoTicker">
+        <mat-autocomplete #autoTicker="matAutocomplete">
+          <mat-option *ngFor="let ticker of filteredTickers" [value]="ticker">{{ ticker }}</mat-option>
+        </mat-autocomplete>
       </mat-form-field>
     </form>
   </div>
-  
 </body>

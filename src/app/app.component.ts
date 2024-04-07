@@ -16,78 +16,188 @@ interface Fund {
 })
 export class AppComponent implements OnInit {
   title =  'FundSearcher';
-  funds: Fund[] = [ {
-    "Ticker": "ADFAX",
-    "FundName": "AC-DIV BND-A",
-    "FundSector": "BOND DIVERSIFIED",
-    "FundFamily": "AMERICAN CENTURY"
-  },
-  {
-    "Ticker": "ADFIX",
-    "FundName": "AC-DIV BND-INV",
-    "FundSector": "BOND DIVERSIFIED",
-    "FundFamily": "AMERICAN CENTURY"
-  },
-  {
-    "Ticker": "ADVRX",
-    "FundName": "AC-DIV BND-R",
-    "FundSector": "BOND DIVERSIFIED",
-    "FundFamily": "AMERICAN CENTURY"
-  },
-  {
-    "Ticker": "CDBCX",
-    "FundName": "AC-DIV BND-C",
-    "FundSector": "BOND DIVERSIFIED",
-    "FundFamily": "AMERICAN CENTURY"
-  },
-  {
-    "Ticker": "BFAAX",
-    "FundName": "BC-DIV BND-A",
-    "FundSector": "BOND DIVERSIFIED",
-    "FundFamily": "BLACKROCK"
-  },
-  {
-    "Ticker": "BFIBX",
-    "FundName": "BC-DIV BND-I",
-    "FundSector": "BOND DIVERSIFIED",
-    "FundFamily": "BLACKROCK"
-  },
-  {
-    "Ticker": "BFRAX",
-    "FundName": "BC-DIV BND-R",
-    "FundSector": "BOND DIVERSIFIED",
-    "FundFamily": "BLACKROCK"
-  },
-  {
-    "Ticker": "CBBCX",
-    "FundName": "BC-DIV BND-C",
-    "FundSector": "BOND DIVERSIFIED",
-    "FundFamily": "BLACKROCK"
-  },
-  {
-    "Ticker": "CGAAX",
-    "FundName": "CC-DIV BND-A",
-    "FundSector": "BOND DIVERSIFIED",
-    "FundFamily": "COLUMBIA"
-  },
-  {
-    "Ticker": "CGIBX",
-    "FundName": "CC-DIV BND-I",
-    "FundSector": "BOND DIVERSIFIED",
-    "FundFamily": "COLUMBIA"
-  },
-  {
-    "Ticker": "CGRAX",
-    "FundName": "CC-DIV BND-R",
-    "FundSector": "BOND DIVERSIFIED",
-    "FundFamily": "COLUMBIA"
-  },
-  {
-    "Ticker": "CCBCX",
-    "FundName": "CC-DIV BND-C",
-    "FundSector": "BOND DIVERSIFIED",
-    "FundFamily": "COLUMBIA"
-  }];
+  funds: Fund[] = [
+    {
+      "Ticker": "AC001",
+      "FundName": "AC-DIV BND-A1",
+      "FundSector": "BOND DIVERSIFIED",
+      "FundFamily": "AMERICAN CENTURY"
+    },
+    {
+      "Ticker": "AC002",
+      "FundName": "AC-DIV BND-A2",
+      "FundSector": "EQUITY GROWTH",
+      "FundFamily": "AMERICAN CENTURY"
+    },
+    {
+      "Ticker": "AC003",
+      "FundName": "AC-DIV BND-A3",
+      "FundSector": "INTERNATIONAL",
+      "FundFamily": "AMERICAN CENTURY"
+    },
+    {
+      "Ticker": "AC004",
+      "FundName": "AC-DIV BND-A4",
+      "FundSector": "TECHNOLOGY",
+      "FundFamily": "AMERICAN CENTURY"
+    },
+    {
+      "Ticker": "AC005",
+      "FundName": "AC-DIV BND-A5",
+      "FundSector": "REAL ESTATE",
+      "FundFamily": "AMERICAN CENTURY"
+    },
+    {
+      "Ticker": "BC001",
+      "FundName": "BC-DIV BND-A1",
+      "FundSector": "BOND DIVERSIFIED",
+      "FundFamily": "BLACKROCK"
+    },
+    {
+      "Ticker": "BC002",
+      "FundName": "BC-DIV BND-A2",
+      "FundSector": "EQUITY GROWTH",
+      "FundFamily": "BLACKROCK"
+    },
+    {
+      "Ticker": "BC003",
+      "FundName": "BC-DIV BND-A3",
+      "FundSector": "INTERNATIONAL",
+      "FundFamily": "BLACKROCK"
+    },
+    {
+      "Ticker": "BC004",
+      "FundName": "BC-DIV BND-A4",
+      "FundSector": "TECHNOLOGY",
+      "FundFamily": "BLACKROCK"
+    },
+    {
+      "Ticker": "BC005",
+      "FundName": "BC-DIV BND-A5",
+      "FundSector": "REAL ESTATE",
+      "FundFamily": "BLACKROCK"
+    },
+    {
+      "Ticker": "CC001",
+      "FundName": "CC-DIV BND-A1",
+      "FundSector": "BOND DIVERSIFIED",
+      "FundFamily": "COLUMBIA"
+    },
+    {
+      "Ticker": "CC002",
+      "FundName": "CC-DIV BND-A2",
+      "FundSector": "EQUITY GROWTH",
+      "FundFamily": "COLUMBIA"
+    },
+    {
+      "Ticker": "CC003",
+      "FundName": "CC-DIV BND-A3",
+      "FundSector": "INTERNATIONAL",
+      "FundFamily": "COLUMBIA"
+    },
+    {
+      "Ticker": "CC004",
+      "FundName": "CC-DIV BND-A4",
+      "FundSector": "TECHNOLOGY",
+      "FundFamily": "COLUMBIA"
+    },
+    {
+      "Ticker": "CC005",
+      "FundName": "CC-DIV BND-A5",
+      "FundSector": "REAL ESTATE",
+      "FundFamily": "COLUMBIA"
+    },
+    {
+      "Ticker": "AD001",
+      "FundName": "AD-DIV BND-A1",
+      "FundSector": "BOND DIVERSIFIED",
+      "FundFamily": "AMERICAN CENTURY"
+    },
+    {
+      "Ticker": "AD002",
+      "FundName": "AD-DIV BND-A2",
+      "FundSector": "EQUITY GROWTH",
+      "FundFamily": "AMERICAN CENTURY"
+    },
+    {
+      "Ticker": "AD003",
+      "FundName": "AD-DIV BND-A3",
+      "FundSector": "INTERNATIONAL",
+      "FundFamily": "AMERICAN CENTURY"
+    },
+    {
+      "Ticker": "AD004",
+      "FundName": "AD-DIV BND-A4",
+      "FundSector": "TECHNOLOGY",
+      "FundFamily": "AMERICAN CENTURY"
+    },
+    {
+      "Ticker": "AD005",
+      "FundName": "AD-DIV BND-A5",
+      "FundSector": "REAL ESTATE",
+      "FundFamily": "AMERICAN CENTURY"
+    },
+    {
+      "Ticker": "BD001",
+      "FundName": "BD-DIV BND-A1",
+      "FundSector": "BOND DIVERSIFIED",
+      "FundFamily": "BLACKROCK"
+    },
+    {
+      "Ticker": "BD002",
+      "FundName": "BD-DIV BND-A2",
+      "FundSector": "EQUITY GROWTH",
+      "FundFamily": "BLACKROCK"
+    },
+    {
+      "Ticker": "BD003",
+      "FundName": "BD-DIV BND-A3",
+      "FundSector": "INTERNATIONAL",
+      "FundFamily": "BLACKROCK"
+    },
+    {
+      "Ticker": "BD004",
+      "FundName": "BD-DIV BND-A4",
+      "FundSector": "TECHNOLOGY",
+      "FundFamily": "BLACKROCK"
+    },
+    {
+      "Ticker": "BD005",
+      "FundName": "BD-DIV BND-A5",
+      "FundSector": "REAL ESTATE",
+      "FundFamily": "BLACKROCK"
+    },
+    {
+      "Ticker": "CD001",
+      "FundName": "CD-DIV BND-A1",
+      "FundSector": "BOND DIVERSIFIED",
+      "FundFamily": "COLUMBIA"
+    },
+    {
+      "Ticker": "CD002",
+      "FundName": "CD-DIV BND-A2",
+      "FundSector": "EQUITY GROWTH",
+      "FundFamily": "COLUMBIA"
+    },
+    {
+      "Ticker": "CD003",
+      "FundName": "CD-DIV BND-A3",
+      "FundSector": "INTERNATIONAL",
+      "FundFamily": "COLUMBIA"
+    },
+    {
+      "Ticker": "CD004",
+      "FundName": "CD-DIV BND-A4",
+      "FundSector": "TECHNOLOGY",
+      "FundFamily": "COLUMBIA"
+    },
+    {
+      "Ticker": "CD005",
+      "FundName": "CD-DIV BND-A5",
+      "FundSector": "REAL ESTATE",
+      "FundFamily": "COLUMBIA"
+    }
+  ];
   formGroup!: FormGroup;
 
   fundFamilies: string[] = [];
@@ -99,11 +209,20 @@ export class AppComponent implements OnInit {
   fundNames: string[] = [];
   filteredFundNames: string[] = [];
 
+  tickers: string[] = [];
+  filteredTickers: string[] = [];
+
+  // Declare your new properties here
+  fundNameSelected: boolean = false;
+  tickerSelected: boolean = false;
+
+
   constructor(private fb: FormBuilder) {}
 
   ngOnInit() {
     this.initForm();
-    this.initializeFunds();
+    // this.initializeFunds();
+    this.initializeDropdowns();
   }
 
   initForm() {
@@ -111,96 +230,125 @@ export class AppComponent implements OnInit {
       'fundFamily': [''],
       'fundSector': [''],
       'fundName': [''],
-      'fundTicker': new FormControl({value: '', disabled: true})  // Ticker is read-only and auto-filled
+      'ticker': [''],
     });
 
     // Debounce search for fund family
     this.formGroup.get('fundFamily')?.valueChanges
       .pipe(debounceTime(300))
       .subscribe(value => {
-        this.filterFundFamilies(value);
-        this.initializeFundSectors();  // Initialize sectors when family changes
-        
-
+        this.filterOptions('fundFamily', value);
       });
 
-    // Debounce search for fund sector
-    this.formGroup.get('fundSector')?.valueChanges
+      this.formGroup.get('fundSector')?.valueChanges
       .pipe(debounceTime(300))
       .subscribe(value => {
-        this.filterFundSectors(value);
-        this.initializeFundNames();  // Initialize names when sector changes
+        this.filterOptions('fundSector', value);
       });
 
-    // Debounce search for fund name
-    this.formGroup.get('fundName')?.valueChanges
+      this.formGroup.get('fundName')?.valueChanges
       .pipe(debounceTime(300))
-      .subscribe(value => this.filterFundNames(value));
+      .subscribe(value => {
+        this.filterOptions('fundName', value);
+      });
+
+      this.formGroup.get('ticker')?.valueChanges
+      .pipe(debounceTime(300))
+      .subscribe(value => {
+        this.filterOptions('ticker', value);
+      });
   }
-
-  initializeFundSectors() {
-    // Get the sectors for the selected family and initialize the filtered list
-    const selectedFamily = this.formGroup.get('fundFamily')?.value;
-    this.fundSectors = [...new Set(this.funds.filter(fund =>
-      fund.FundFamily === selectedFamily
-    ).map(fund => fund.FundSector))];
-    this.filteredFundSectors = this.fundSectors;  // Show all sectors initially
-  }
-
-  initializeFundNames() {
-    // Get the names for the selected sector and initialize the filtered list
-    const selectedSector = this.formGroup.get('fundSector')?.value;
-    this.fundNames = [...new Set(this.funds.filter(fund =>
-      fund.FundFamily === this.formGroup.get('fundFamily')?.value &&
-      fund.FundSector === selectedSector
-    ).map(fund => fund.FundName))];
-    this.filteredFundNames = this.fundNames;  // Show all names initially
-  }
-
-
-  initializeFunds() {
-    // Extract unique fund families
+  
+  initializeDropdowns() {
     this.fundFamilies = [...new Set(this.funds.map(fund => fund.FundFamily))];
+    this.fundSectors = [...new Set(this.funds.map(fund => fund.FundSector))];
+    this.fundNames = [...new Set(this.funds.map(fund => fund.FundName))];
+    this.tickers = [...new Set(this.funds.map(fund => fund.Ticker))];
+
     this.filteredFundFamilies = this.fundFamilies;
+    this.filteredFundSectors = this.fundSectors;
+    this.filteredFundNames = this.fundNames;
+    this.filteredTickers = this.tickers;
   }
 
-  filterFundFamilies(value: string) {
-    this.filteredFundFamilies = this.fundFamilies.filter(fundFamily =>
-      fundFamily.toLowerCase().includes(value.toLowerCase())
-    );
+  
+  filterOptions(dropdown: string, value: string) {
+  // Reset selections if the value is cleared
+  if (!value) {
+    this.fundNameSelected = false;
+    this.tickerSelected = false;
+    this.initializeDropdowns();
+    return;
   }
 
-  filterFundSectors(value: string) {
-    this.fundSectors = [...new Set(this.funds.filter(fund =>
-      fund.FundFamily === this.formGroup.value.fundFamily
-    ).map(fund => fund.FundSector))];
-    this.filteredFundSectors = this.fundSectors.filter(fundSector =>
-      fundSector.toLowerCase().includes(value.toLowerCase())
-    );
+  let filteredFunds = this.funds;
+
+  // Clear fundName and ticker if fundFamily or fundSector is changed
+  if (dropdown === 'fundFamily') {
+    this.formGroup.patchValue({
+      fundName: '', // Reset fundName
+      ticker: '', // Reset ticker
+      fundSector: '', //REset 
+    }, {emitEvent: false}); // Prevent triggering valueChanges again
   }
 
-  filterFundNames(value: string) {
-    this.fundNames = [...new Set(this.funds.filter(fund =>
-      fund.FundFamily === this.formGroup.value.fundFamily &&
-      fund.FundSector === this.formGroup.value.fundSector
-    ).map(fund => fund.FundName))];
-    this.filteredFundNames = this.fundNames.filter(fundName =>
-      fundName.toLowerCase().includes(value.toLowerCase())
-    );
+  if (dropdown === 'fundSector') {
+    this.formGroup.patchValue({
+      fundName: '', // Reset fundName
+      ticker: '', // Reset ticker
+      fundFamily: '', 
+    }, {emitEvent: false}); // Prevent triggering valueChanges again
   }
-  onFundNameSelected() {
-    const fundName = this.formGroup.get('fundName')?.value;
-    if (fundName) {
-      const tickers = this.getTickersForFundName(fundName);
-      if (tickers.length === 1) {
-        this.formGroup.get('fundTicker')?.setValue(tickers[0]);
-      }
+
+  // Check and apply fundFamily filter if it's not the one being changed or if it has a value
+    if (dropdown !== 'fundFamily' && this.formGroup.get('fundFamily')?.value) {
+        filteredFunds = filteredFunds.filter(fund => fund.FundFamily.includes(this.formGroup.get('fundFamily')?.value));
     }
+    
+    // Check and apply fundSector filter if it's not the one being changed or if it has a value
+    if (dropdown !== 'fundSector' && this.formGroup.get('fundSector')?.value) {
+        filteredFunds = filteredFunds.filter(fund => fund.FundSector.includes(this.formGroup.get('fundSector')?.value));
+    }
+
+  
+  switch (dropdown) {
+    case 'fundFamily':
+      this.fundNameSelected = false; // Reset the fundName selected flag
+      this.tickerSelected = false; // Reset the ticker selected flag
+      filteredFunds = filteredFunds.filter(fund => fund.FundFamily === (value));
+      break;
+    case 'fundSector':
+      this.fundNameSelected = false; // Reset the fundName selected flag
+      this.tickerSelected = false; // Reset the ticker selected flag
+      filteredFunds = filteredFunds.filter(fund => fund.FundSector === (value));
+      break;
+    case 'fundName':
+      this.fundNameSelected = true; // Set the fundName selected flag
+      filteredFunds = this.funds.filter(fund => fund.FundName === (value));
+      break;
+    case 'ticker':
+      this.tickerSelected = true; // Set the ticker selected flag
+      filteredFunds = this.funds.filter(fund => fund.Ticker === (value));
+      break;
   }
 
-  getTickersForFundName(fundName: string): string[] {
-    return this.funds
-      .filter(fund => fund.FundName === fundName)
-      .map(fund => fund.Ticker);
+  if (this.fundNameSelected || this.tickerSelected) {
+    // If fundName or ticker is selected, find the corresponding fund and update all fields
+    const selectedFund = filteredFunds[0]; // Assuming the name or ticker is unique
+    this.formGroup.setValue({
+      fundFamily: selectedFund.FundFamily,
+      fundSector: selectedFund.FundSector,
+      fundName: selectedFund.FundName,
+      ticker: selectedFund.Ticker
+    }, {emitEvent: false}); // Prevent the valueChanges subscription from firing
+  } else {
+    // Update the filtered options for dropdowns
+    this.filteredFundFamilies = [...new Set(filteredFunds.map(fund => fund.FundFamily))];
+    this.filteredFundSectors = [...new Set(filteredFunds.map(fund => fund.FundSector))];
+    this.filteredFundNames = [...new Set(filteredFunds.map(fund => fund.FundName))];
+    this.filteredTickers = [...new Set(filteredFunds.map(fund => fund.Ticker))];
   }
 }
+}
+
+
