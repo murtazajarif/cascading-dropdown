@@ -212,7 +212,6 @@ export class AppComponent implements OnInit {
   tickers: string[] = [];
   filteredTickers: string[] = [];
 
-  // Declare your new properties here
   fundNameSelected: boolean = false;
   tickerSelected: boolean = false;
 
