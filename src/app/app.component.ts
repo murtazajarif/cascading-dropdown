@@ -276,9 +276,8 @@ export class AppComponent implements OnInit {
   // Reset selections if the value is cleared
   const lowerValue = value.toLowerCase();
   if (!value) {
-    this.fundNameSelected = false;
-    this.tickerSelected = false;
     this.initializeDropdowns();
+    this.resetDropdowns();
     return;
   }
 
@@ -312,42 +311,56 @@ export class AppComponent implements OnInit {
   
   switch (dropdown) {
     case 'fundFamily':
-      this.fundNameSelected = false; // Reset the fundName selected flag
-      this.tickerSelected = false; // Reset the ticker selected flag
       filteredFunds = filteredFunds.filter(fund => fund.FundFamily.toLowerCase().includes(lowerValue));
       break;
     case 'fundSector':
-      this.fundNameSelected = false; // Reset the fundName selected flag
-      this.tickerSelected = false; // Reset the ticker selected flag
       filteredFunds = filteredFunds.filter(fund => fund.FundSector.toLowerCase().includes(lowerValue));
       break;
     case 'fundName':
-      this.fundNameSelected = true; // Set the fundName selected flag
-      filteredFunds = this.funds.filter(fund => fund.FundName === (value));
+      filteredFunds = this.funds.filter(fund => fund.FundName.toLowerCase().includes(lowerValue));
       break;
     case 'ticker':
-      this.tickerSelected = true; // Set the ticker selected flag
-      filteredFunds = this.funds.filter(fund => fund.Ticker === (value));
+      filteredFunds = this.funds.filter(fund => fund.Ticker.toLowerCase().includes(lowerValue));
       break;
   }
 
-  if (this.fundNameSelected || this.tickerSelected) {
-    // If fundName or ticker is selected, find the corresponding fund and update all fields
-    const selectedFund = filteredFunds[0]; // Assuming the name or ticker is unique
-    this.formGroup.setValue({
-      fundFamily: selectedFund.FundFamily,
-      fundSector: selectedFund.FundSector,
-      fundName: selectedFund.FundName,
-      ticker: selectedFund.Ticker
-    }, {emitEvent: false}); // Prevent the valueChanges subscription from firing
-  } else {
-    // Update the filtered options for dropdowns
-    this.filteredFundFamilies = [...new Set(filteredFunds.map(fund => fund.FundFamily))];
-    this.filteredFundSectors = [...new Set(filteredFunds.map(fund => fund.FundSector))];
-    this.filteredFundNames = [...new Set(filteredFunds.map(fund => fund.FundName))];
-    this.filteredTickers = [...new Set(filteredFunds.map(fund => fund.Ticker))];
+  this.updateFilteredLists(filteredFunds);
+
+  // Handle autofill and ensure no automatic selection when clearing input
+  if (filteredFunds.length === 1) {
+    this.handleAutofill(filteredFunds[0]);
   }
 }
+
+updateFilteredLists(filteredFunds: Fund[]): void {
+  this.filteredFundFamilies = [...new Set(filteredFunds.map(fund => fund.FundFamily))];
+  this.filteredFundSectors = [...new Set(filteredFunds.map(fund => fund.FundSector))];
+  this.filteredFundNames = [...new Set(filteredFunds.map(fund => fund.FundName))];
+  this.filteredTickers = [...new Set(filteredFunds.map(fund => fund.Ticker))];
 }
 
+handleAutofill(selectedFund: Fund): void {
+  // Only autofill if a specific fund is uniquely identified by the selection
+  this.formGroup.patchValue({
+    fundFamily: selectedFund.FundFamily,
+    fundSector: selectedFund.FundSector,
+    fundName: selectedFund.FundName,
+    ticker: selectedFund.Ticker
+  }, {emitEvent: false});
+}
 
+resetDropdowns(): void {
+  this.filteredFundFamilies = this.extractUniqueValues(this.funds, 'FundFamily');
+  this.filteredFundSectors = this.extractUniqueValues(this.funds, 'FundSector');
+  this.filteredFundNames = this.extractUniqueValues(this.funds, 'FundName');
+  this.filteredTickers = this.extractUniqueValues(this.funds, 'Ticker');
+  // Clear selected values without emitting events that could trigger filters again
+  this.formGroup.patchValue({
+    fundName: '',
+    ticker: ''
+  }, {emitEvent: false});
+}
+extractUniqueValues(funds: Fund[], key: keyof Fund): string[] {
+  return [...new Set(funds.map(fund => fund[key]))];
+}
+}
