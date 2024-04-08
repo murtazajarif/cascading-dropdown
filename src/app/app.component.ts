@@ -274,6 +274,7 @@ export class AppComponent implements OnInit {
   
   filterOptions(dropdown: string, value: string) {
   // Reset selections if the value is cleared
+  const lowerValue = value.toLowerCase();
   if (!value) {
     this.fundNameSelected = false;
     this.tickerSelected = false;
@@ -288,7 +289,6 @@ export class AppComponent implements OnInit {
     this.formGroup.patchValue({
       fundName: '', // Reset fundName
       ticker: '', // Reset ticker
-      fundSector: '', //REset 
     }, {emitEvent: false}); // Prevent triggering valueChanges again
   }
 
@@ -296,7 +296,6 @@ export class AppComponent implements OnInit {
     this.formGroup.patchValue({
       fundName: '', // Reset fundName
       ticker: '', // Reset ticker
-      fundFamily: '', 
     }, {emitEvent: false}); // Prevent triggering valueChanges again
   }
 
@@ -315,12 +314,12 @@ export class AppComponent implements OnInit {
     case 'fundFamily':
       this.fundNameSelected = false; // Reset the fundName selected flag
       this.tickerSelected = false; // Reset the ticker selected flag
-      filteredFunds = filteredFunds.filter(fund => fund.FundFamily === (value));
+      filteredFunds = filteredFunds.filter(fund => fund.FundFamily.toLowerCase().includes(lowerValue));
       break;
     case 'fundSector':
       this.fundNameSelected = false; // Reset the fundName selected flag
       this.tickerSelected = false; // Reset the ticker selected flag
-      filteredFunds = filteredFunds.filter(fund => fund.FundSector === (value));
+      filteredFunds = filteredFunds.filter(fund => fund.FundSector.toLowerCase().includes(lowerValue));
       break;
     case 'fundName':
       this.fundNameSelected = true; // Set the fundName selected flag
